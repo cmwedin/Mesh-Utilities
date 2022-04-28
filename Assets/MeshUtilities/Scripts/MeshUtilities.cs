@@ -39,7 +39,6 @@ namespace MeshUtilities {
             newUV.Add(v3);
 
         }
-
         void AddQuad(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4)
         {
             int vertIndex = newVertices.Count;
@@ -56,6 +55,9 @@ namespace MeshUtilities {
             triangles.Add(vertIndex + 1);
             triangles.Add(vertIndex + 2);
             triangles.Add(vertIndex + 3);
+        }
+        void AddLineSegment(Vector3 v1, Vector3 v2, Vector3 brush) { //? QOL function, this could easily be made as a quad
+            AddQuad(v1 - brush, v1 + brush, v2 + brush, v2 - brush);
         }
     }
 }
