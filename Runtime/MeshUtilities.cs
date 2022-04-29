@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MeshUtilities {
+namespace SadSapphicGames.MeshUtilities {
     public class MeshUtilities {
         private Mesh _mesh;
         MeshCollider meshCollider;

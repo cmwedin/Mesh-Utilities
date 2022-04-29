@@ -1,0 +1,11 @@
+{
+  "name": "com.sadsapphicgames.mesh-utilities",
+  "version": "0.1.0",
+  "displayName": "Mesh Utilities",
+  "description": "A in development package im working on to make working with meshes from code easier across \nall my projects",
+  "author": {
+      "name": "Chris Wedin",
+      "email": "cmwedin@gmail.com",
+      "url": "https://github.com/cmwedin"
+  }
+}
