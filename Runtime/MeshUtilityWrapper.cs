@@ -29,7 +29,7 @@ namespace SadSapphicGames.MeshUtilities {
             mesh.vertices = newVertices.ToArray();
             mesh.triangles = newTriangles.ToArray();
             mesh.uv = newUV.ToArray();
-            if(useVertColors) mesh.Colors = newColors.ToArray();
+            if(useVertColors) mesh.colors = newColors.ToArray();
         }
 
         // * Reset the lists
