@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SadSapphicGames.MeshUtilities {
-    public class MeshUtilities {
+    public class MeshUtilityWrapper {
         private Mesh _mesh;
         MeshCollider meshCollider;
         static List<Vector3> newVertices = new List<Vector3>();
@@ -11,17 +11,17 @@ namespace SadSapphicGames.MeshUtilities {
         static List<Vector2> newUV = new List<Vector2>();
 
         // * Constructor
-        public MeshUtilities(Mesh mesh) {
+        public MeshUtilityWrapper(Mesh mesh) {
             this._mesh = mesh;
         }
 
-        private void UpdateMesh() {
+        public void UpdateMesh() {
             _mesh.Clear();
             _mesh.vertices = newVertices.ToArray();
             _mesh.triangles = triangles.ToArray();
             _mesh.uv = newUV.ToArray();
         }
-        void AddTriangle(Vector3 v1, Vector3 v2, Vector3 v3)
+        public void AddTriangle(Vector3 v1, Vector3 v2, Vector3 v3)
         {
             int vertIndex = newVertices.Count;
 
@@ -33,13 +33,13 @@ namespace SadSapphicGames.MeshUtilities {
             triangles.Add(vertIndex + 1);
             triangles.Add(vertIndex + 2);
         }
-        void AddTriangleUVs(Vector2 v1, Vector2 v2, Vector2 v3) {
+        public void AddTriangleUVs(Vector2 v1, Vector2 v2, Vector2 v3) {
             newUV.Add(v1);
             newUV.Add(v2);
             newUV.Add(v3);
 
         }
-        void AddQuad(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4)
+        public void AddQuad(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4)
         {
             int vertIndex = newVertices.Count;
 
@@ -56,7 +56,7 @@ namespace SadSapphicGames.MeshUtilities {
             triangles.Add(vertIndex + 2);
             triangles.Add(vertIndex + 3);
         }
-        void AddLineSegment(Vector3 v1, Vector3 v2, Vector3 brush) { //? QOL function, this could easily be made as a quad
+        public void AddLineSegment(Vector3 v1, Vector3 v2, Vector3 brush) { //? QOL function, this could easily be made as a quad
             AddQuad(v1 - brush, v1 + brush, v2 + brush, v2 - brush);
         }
     }
