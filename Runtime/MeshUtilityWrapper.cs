@@ -29,6 +29,7 @@ namespace SadSapphicGames.MeshUtilities {
             mesh.vertices = newVertices.ToArray();
             mesh.triangles = newTriangles.ToArray();
             mesh.uv = newUV.ToArray();
+            if(useVertColors) mesh.Colors = newColors.ToArray();
         }
 
         // * Reset the lists
@@ -81,32 +82,32 @@ namespace SadSapphicGames.MeshUtilities {
         }
 
         // * Adding Vertex Colors
-        void AddQuadColor(Color c1) {
+        public void AddQuadColor(Color c1) {
             newColors.Add(c1);
             newColors.Add(c1);
             newColors.Add(c1);
             newColors.Add(c1);
 
         }
-        void AddQuadColor(Color c1, Color c2) {
+        public void AddQuadColor(Color c1, Color c2) {
             newColors.Add(c1);
             newColors.Add(c1);
             newColors.Add(c2);
             newColors.Add(c2);
 
         }
-        void AddQuadColor(Color c1, Color c2, Color c3, Color c4) {
+        public void AddQuadColor(Color c1, Color c2, Color c3, Color c4) {
             newColors.Add(c1);
             newColors.Add(c2);
             newColors.Add(c3);
             newColors.Add(c4);
         }
-        void AddTriangleColor(Color color) {
+        public void AddTriangleColor(Color color) {
             newColors.Add(color);
             newColors.Add(color);
             newColors.Add(color);
         }
-        void AddTriangleColor(Color c1, Color c2, Color c3) {
+        public void AddTriangleColor(Color c1, Color c2, Color c3) {
             newColors.Add(c1);
             newColors.Add(c2);
             newColors.Add(c3);
