@@ -130,12 +130,12 @@ namespace SadSapphicGames.MeshUtilities {
             newColors.Add(c3);
             CheckListLength(newColors);
         }
-        private void CheckListLength(List<> list) {
+        private void CheckListLength(IList list) {
             if (
                 list.Count != 0
                 && list.Count != newTriangles.Count //? i believe this is the correct comparison to make
             ) {
-                throw new InvalidListLengthException($"{list.Name} isn't empty but does not match the length of newTriangles, are you missing a function call somewhere?");
+                throw new InvalidListLengthException($"{list.ToString()} isn't empty but does not match the length of newTriangles, are you missing a function call somewhere?");
             } else return;
         }
     }
